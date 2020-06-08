@@ -50,4 +50,13 @@ describe('createResponse', () => {
             expect(res.header['content-type']).toEqual('text/html');
         });
     });
+
+    
+    it('handles an error route', () => {
+        return request(app)
+        .get('/fake')
+        .then(res => {
+            expect(res.status).toEqual(404);
+        });
+    });
 });
