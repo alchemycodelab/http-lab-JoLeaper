@@ -19,15 +19,15 @@ describe('createResponse', () => {
 // Content-Type: text/html
 
 // <h1>hi there</h1>
-    // it('handles the /echo route', () => {
-    //     return request(app)
-    //         .post('/echo')
-    //         .send('peanut butter')
-    //         .then(res => {
-    //             expect(res.text).toEqual('peanut butter');
-    //             expect(res.status).toEqual(200);
-    //         });
-    // });
+    it('handles the /echo route', () => {
+        return request(app)
+            .post('/echo')
+            .send('peanut butter')
+            .then(res => {
+                expect(res.text).toEqual('peanut butter');
+                expect(res.status).toEqual(200);
+            });
+    });
 
     // it('handles the /red route', () => {
     //     return request(app)
