@@ -9,22 +9,17 @@ describe('createResponse', () => {
         .get('/')
         .then(res => {
             expect(res.text).toEqual('hi');
+            expect(res.header['content-type']).toEqual('text/plain');
         });
     });
 
-
-    // HTTP/1.1 200 OK
-// Accept-Ranges: bytes
-// Content-Length: 17
-// Content-Type: text/html
-
-// <h1>hi there</h1>
     it('handles the /echo route', () => {
         return request(app)
             .post('/echo')
             .send('peanut butter')
             .then(res => {
                 expect(res.text).toEqual('peanut butter');
+                expect(res.header['content-type']).toEqual('text/plain');
                 expect(res.status).toEqual(200);
             });
     });
