@@ -4,13 +4,13 @@ const app = require('../lib/app');
 // res.text => text
 
 describe('createResponse', () => {
-    // it('handles the / route', () => {
-    //     return request(app)
-    //     .get('/')
-    //     .then(res => {
-    //         expect(res.text).toEqual('hi');
-    //     });
-    // });
+    it('handles the / route', () => {
+        return request(app)
+        .get('/')
+        .then(res => {
+            expect(res.text).toEqual('hi');
+        });
+    });
 
 
     // HTTP/1.1 200 OK
@@ -19,18 +19,13 @@ describe('createResponse', () => {
 // Content-Type: text/html
 
 // <h1>hi there</h1>
-    // it('handles the /echo route', async() => {
+    // it('handles the /echo route', () => {
     //     return request(app)
     //         .post('/echo')
-    //         .send({ peanut: 'butter' })
+    //         .send('peanut butter')
     //         .then(res => {
-    //             expect(res.text).toEqual(`
-    //         HTTP/1.1 200 OK
-    //         Accept-Ranges: bytes
-    //         Content-Length:
-    //         Content-Type: text/html
-            
-    //         `);
+    //             expect(res.text).toEqual('peanut butter');
+    //             expect(res.status).toEqual(200);
     //         });
     // });
 
