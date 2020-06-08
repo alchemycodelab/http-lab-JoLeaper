@@ -4,43 +4,57 @@ const app = require('../lib/app');
 // res.text => text
 
 describe('createResponse', () => {
-    it('handles the / route', () => {
-        return request(app)
-        .get('/')
-        .then(res => {
-            expect(res.something).toEqual('hi');
-        });
-    });
+    // it('handles the / route', () => {
+    //     return request(app)
+    //     .get('/')
+    //     .then(res => {
+    //         expect(res.text).toEqual('hi');
+    //     });
+    // });
 
-    it('handles the /echo route', () => {
-        return request(app)
-        .post('/echo')
-        .then(res => {
-            expect(res.text).toEqual('');
-        });
-    });
 
-    it('handles the /red route', () => {
-        return request(app)
-        .get('/red')
-        .then(res => {
-            expect(res.something).toEqual('<h1>red</h1>');
-        });
-    });
+    // HTTP/1.1 200 OK
+// Accept-Ranges: bytes
+// Content-Length: 17
+// Content-Type: text/html
 
-    it('handles the /green route', () => {
-        return request(app)
-        .get('/green')
-        .then(res => {
-            expect(res.something).toEqual('<h1>green</h1>');
-        });
-    });
+// <h1>hi there</h1>
+    // it('handles the /echo route', async() => {
+    //     return request(app)
+    //         .post('/echo')
+    //         .send({ peanut: 'butter' })
+    //         .then(res => {
+    //             expect(res.text).toEqual(`
+    //         HTTP/1.1 200 OK
+    //         Accept-Ranges: bytes
+    //         Content-Length:
+    //         Content-Type: text/html
+            
+    //         `);
+    //         });
+    // });
 
-    it('handles the /blue route', () => {
-        return request(app)
-        .get('/blue')
-        .then(res => {
-            expect(res.something).toEqual('<h1>blue</h1>');
-        });
-    });
+    // it('handles the /red route', () => {
+    //     return request(app)
+    //     .get('/red')
+    //     .then(res => {
+    //         expect(res.something).toEqual('<h1>red</h1>');
+    //     });
+    // });
+
+    // it('handles the /green route', () => {
+    //     return request(app)
+    //     .get('/green')
+    //     .then(res => {
+    //         expect(res.something).toEqual('<h1>green</h1>');
+    //     });
+    // });
+
+    // it('handles the /blue route', () => {
+    //     return request(app)
+    //     .get('/blue')
+    //     .then(res => {
+    //         expect(res.something).toEqual('<h1>blue</h1>');
+    //     });
+    // });
 });
