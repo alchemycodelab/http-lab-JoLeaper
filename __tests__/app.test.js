@@ -29,27 +29,30 @@ describe('createResponse', () => {
             });
     });
 
-    // it('handles the /red route', () => {
-    //     return request(app)
-    //     .get('/red')
-    //     .then(res => {
-    //         expect(res.something).toEqual('<h1>red</h1>');
-    //     });
-    // });
+    it('handles the /red route', () => {
+        return request(app)
+        .get('/red')
+        .then(res => {
+            expect(res.text).toEqual('<h1>red</h1>');
+            expect(res.header['content-type']).toEqual('text/html');
+        });
+    });
 
-    // it('handles the /green route', () => {
-    //     return request(app)
-    //     .get('/green')
-    //     .then(res => {
-    //         expect(res.something).toEqual('<h1>green</h1>');
-    //     });
-    // });
+    it('handles the /green route', () => {
+        return request(app)
+        .get('/green')
+        .then(res => {
+            expect(res.text).toEqual('<h1>green</h1>');
+            expect(res.header['content-type']).toEqual('text/html');
+        });
+    });
 
-    // it('handles the /blue route', () => {
-    //     return request(app)
-    //     .get('/blue')
-    //     .then(res => {
-    //         expect(res.something).toEqual('<h1>blue</h1>');
-    //     });
-    // });
+    it('handles the /blue route', () => {
+        return request(app)
+        .get('/blue')
+        .then(res => {
+            expect(res.text).toEqual('<h1>blue</h1>');
+            expect(res.header['content-type']).toEqual('text/html');
+        });
+    });
 });
